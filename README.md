@@ -1,5 +1,5 @@
 # Contact-Manager
-Contact Manager adalah aplikasi contoh yang sangat sederhana untuk pembelajaran pemula, dengan poin pembelajaran PHP OOP,MVC,PDO, tidak memakai PHP Autoloader agar lebih mudah dalam memahami alur aplikasi.
+Contact Manager adalah aplikasi contoh yang sangat sederhana untuk pembelajaran pemula, poin pembelajaran CRUD dengan PHP OOP,MVC,PDO, tidak memakai PHP Autoloader agar lebih mudah dalam memahami alur aplikasi.
 
 Tahapan belajar: Amati,Tiru,Modifikasi,Buat sendiri
 
