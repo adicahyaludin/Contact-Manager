@@ -12,7 +12,12 @@
 <body>
 
 <h1>Contact Manager</h1>
-<a href="?c=contact&m=add">Add Contact</a><br><br>
+<p><a href="?c=contact&m=add">Add Contact</a></p>
+<?php
+if (!empty($data['notifikasi'])) {
+	echo "<p>$data[notifikasi]</p>";
+}
+?>
 <table>
 	<thead>
 		<tr>
@@ -21,13 +26,13 @@
 			<th>Telepon</th>
 			<th>Email</th>
 			<th>Alamat</th>
-			<th></th>
+			<th>Aksi</th>
 		</tr>
 	</thead>
 	<tbody>
 		<?php
-		if ($contacts) {
-			foreach ($contacts as $k => $v) {
+		if ($data['contacts']) {
+			foreach ($data['contacts'] as $k => $v) {
 			?>
 				<tr>
 					<td><?php echo $k+1; ?></td>

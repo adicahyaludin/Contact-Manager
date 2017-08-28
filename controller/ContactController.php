@@ -10,9 +10,11 @@ class ContactController {
 		$this->contacts = new Contact();
 	}
 
-    public function index() {
-    	$contacts = $this->contacts->getAllContacts();
+    public function index($notifikasi = '') {
+        $data['notifikasi'] = $notifikasi;
+    	$data['contacts'] = $this->contacts->getAllContacts();
     	include 'view/contact/index.php';
+        die;
     }
 
     public function show() {
@@ -42,8 +44,13 @@ class ContactController {
             }
             
             if (empty($errors)) {
-                $this->contacts->add($_POST);
-                header('Location: index.php?c=contact');
+                $add = $this->contacts->add($_POST);
+                if ($add) {
+                    $notifikasi = "Berhasil menambahkan $add kontak.";
+                } else {
+                    $notifikasi = "Gagal menambahkan kontak!";
+                }
+                $this->index($notifikasi); // redirect ke index
             }
         }
         include 'view/contact/add.php';
@@ -73,8 +80,13 @@ class ContactController {
             }
 
             if (empty($errors)) {
-                $this->contacts->edit($_POST,$_GET['id']);
-                header('Location: index.php?c=contact');
+                $edit = $this->contacts->edit($_POST,$_GET['id']);
+                if ($edit) {
+                    $notifikasi = "Berhasil update $edit kontak.";
+                } else {
+                    $notifikasi = "Gagal/kontak tidak di update!";
+                }
+                $this->index($notifikasi); // redirect ke index
             }
         }
 
@@ -83,7 +95,12 @@ class ContactController {
 
     public function delete()
     {
-        $this->contacts->delete($_GET['id']);
-        header('Location: index.php?c=contact');
+        $del = $this->contacts->delete($_GET['id']);
+        if ($del) {
+            $notifikasi = "Berhasil menghapus $del kontak.";
+        } else {
+            $notifikasi = "Gagal menghapus kontak!";
+        }
+        $this->index($notifikasi); // redirect ke index
     }
 }
