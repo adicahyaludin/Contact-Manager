@@ -4,9 +4,9 @@ Contact Manager adalah aplikasi contoh yang sangat sederhana untuk pembelajaran 
 Tahapan belajar: Amati,Tiru,Modifikasi,Buat sendiri
 
 ```
-Fitur yang belum ditambahkan:
-* Pesan notifikasi
-* Penanganan error
+Ide fitur yang bisa ditambahkan:
+* Sorting kontak
+* Page navigasi kontak
 ```
 
 ## Catatan
