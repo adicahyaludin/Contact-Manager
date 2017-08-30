@@ -26,7 +26,7 @@ class ContactController {
     }
 
     public function add() {
-        $errors = [];
+        $errors = array();
 
         if (isset($_POST['submit'])) {
 
@@ -62,7 +62,7 @@ class ContactController {
             die('Page Not Found 404');
         }
 
-        $errors = [];
+        $errors = array();
 
         if (isset($_POST['submit'])) {
 

@@ -10,28 +10,28 @@ class Contact extends ConnectDB {
 
 	public function getContact($id) {
 		$q = $this->conn->prepare("SELECT * FROM contacts WHERE id=?");
-		$q->execute([$id]);
+		$q->execute( array($id) );
 		return $q->fetch();
 	}
 
 	public function add($post)
 	{
 		$q = $this->conn->prepare("INSERT INTO contacts (nama, telepon, email, alamat) VALUES (?,?,?,?)");
-		$q->execute([$post['nama'],$post['telepon'],$post['email'],$post['alamat']]);
+		$q->execute( array($post['nama'],$post['telepon'],$post['email'],$post['alamat']) );
 		return $q->rowCount();
 	}
 
 	public function edit($post,$id)
 	{
 		$q = $this->conn->prepare("UPDATE contacts SET nama=?,telepon=?,email=?,alamat=? WHERE id=?");
-		$q->execute([$post['nama'],$post['telepon'],$post['email'],$post['alamat'],$id]);
+		$q->execute( array($post['nama'],$post['telepon'],$post['email'],$post['alamat'],$id) );
 		return $q->rowCount();
 	}
 
 	public function delete($id)
 	{
 		$q = $this->conn->prepare("DELETE FROM contacts WHERE id = ?");
-		$q->execute([$id]);
+		$q->execute( array($id) );
 		return $q->rowCount();
 	}
 }
