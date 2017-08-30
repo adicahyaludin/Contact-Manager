@@ -7,6 +7,7 @@ Tahapan belajar: Amati,Tiru,Modifikasi,Buat sendiri
 Ide fitur yang bisa ditambahkan:
 * Sorting kontak
 * Page navigasi kontak
+* Search kontak
 ```
 
 ## Catatan
